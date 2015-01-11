@@ -10,14 +10,10 @@ fun! prreview#ReviewPRs()
   ruby PrReview.print_pull_requests Vim.evaluate('g:pr_review_github_repos')
   "remove an extra line at the bottom and move the cursor to the top
   execute 'normal! Gddgg'
-  nnoremap <buffer> <silent> o :call prreview#ReviewPR()<CR>
+  nnoremap <buffer> <silent> o :call prreview#OpenInBrowser()<CR>
   nnoremap <buffer> <silent> gx :call prreview#OpenInBrowser()<CR>
 endfun
 
 fun! prreview#OpenInBrowser()
   ruby PrReview.current.browse Vim.evaluate("line('.')-1")
-endfun
-
-
-fun! prreview#ReviewCommits()
 endfun
