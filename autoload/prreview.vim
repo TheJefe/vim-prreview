@@ -7,7 +7,7 @@ fun! prreview#ReviewPRs()
   silent execute 'botright '.vheight.' new __PR_list'
   setlocal buftype=nofile
   setlocal bufhidden=delete
-  ruby PrReview.print_pull_requests
+  ruby PrReview.print_pull_requests Vim.evaluate('g:pr_review_github_repos')
   "remove an extra line at the bottom and move the cursor to the top
   execute 'normal! Gddgg'
   nnoremap <buffer> <silent> o :call prreview#ReviewPR()<CR>

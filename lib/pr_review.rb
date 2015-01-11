@@ -15,17 +15,19 @@ class PrReview
       c.login = GITHUB_USERNAME
       c.password = GITHUB_TOKEN
     end
-    $pulls
   end
 
-  def self.print_pull_requests
+  def self.print_pull_requests repos
     @current = new()
     options = { :state     => 'open',
                 :labels    => 'Needs QA',
                 :sort      => 'updated',
                 :direction => 'asc'
     }
-    $pulls =  Octokit.issues('thinkthroughmath/apangea', options )
+    $pulls = []
+    repos.each do |r|
+      $pulls +=  Octokit.issues(r, options )
+    end
     @current.print $pulls
   end
 
@@ -34,7 +36,7 @@ class PrReview
     pulls.reverse_each do |pull|
       date = pull.updated_at
       title = pull.title.strip
-     b.append(0, "#{date}: #{title}")
+     b.append(0, "#{date}: #{repo}: #{title}")
     end
   end
 
