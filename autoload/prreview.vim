@@ -16,4 +16,5 @@ endfun
 
 fun! prreview#OpenInBrowser()
   ruby PrReview.current.browse Vim.evaluate("line('.')-1")
+  q
 endfun
