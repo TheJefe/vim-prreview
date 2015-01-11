@@ -34,7 +34,8 @@ class PrReview
   def print pulls
     b = VIM::Buffer.current
     pulls.reverse_each do |pull|
-      date = pull.updated_at
+      date  = pull.updated_at.strftime(format='%F %T')
+      repo  = pull.html_url.split('/')[4]
       title = pull.title.strip
      b.append(0, "#{date}: #{repo}: #{title}")
     end
