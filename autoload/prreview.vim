@@ -10,6 +10,7 @@ fun! prreview#ReviewPRs()
   "remove an extra line at the bottom and move the cursor to the top
   execute 'normal! Gddgg'
   nnoremap <buffer> <silent> o :call prreview#OpenInBrowser()<CR>
+  nnoremap <buffer> <silent> q :q<CR>
   nnoremap <buffer> <silent> gx :call prreview#OpenInBrowser()<CR>
 endfun
 
