@@ -13,3 +13,9 @@ For now, the github authentication credentials are coming from environment varia
     export GITHUB_TOKEN=123
     export GITHUB_USERNAME=jkoenig311
 
+## Mappings
+
+in the PR list window I have
+
+- `o` mapped to open a PR in a browser
+- `q` to `:q` the split window
