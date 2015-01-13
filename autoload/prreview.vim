@@ -2,9 +2,8 @@ ruby $: << File.expand_path(File.join(Vim.evaluate('g:PRREVIEW_INSTALL_PATH'), '
 ruby require 'pr_review'
 
 fun! prreview#ReviewPRs()
-  let vheight=10
   setlocal winfixheight
-  silent execute 'botright '.vheight.' new __PR_list'
+  silent execute 'botright new __PR_list'
   setlocal buftype=nofile
   setlocal bufhidden=delete
   ruby PrReview.print_pull_requests Vim.evaluate('g:pr_review_github_repos')
