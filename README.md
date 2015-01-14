@@ -1,12 +1,17 @@
 # vim-prreview
 
-This plugin allows you to review a list of pull requests across the repositories and labels that you are interested in.
+This plugin allows you to review a list of github pull requests across the repositories and labels that you are interested in.
 
 ## Configuration
 
 set the repositories that you would like to see pull requests listed for by putting this in your `vimrc` file
 
     let g:pr_review_github_repos = ['jkoenig311/vim-prreview','rails/rails']
+
+set up custom pull request filters
+
+    let g:pr_review_filter= {'state': 'open', 'labels': 'Needs QA', 'sort': 'updated', 'direction': 'asc'}
+
 
 For now, the github authentication credentials are coming from environment variables. You'll want to both of these set.
 

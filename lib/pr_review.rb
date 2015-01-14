@@ -17,13 +17,8 @@ class PrReview
     end
   end
 
-  def self.print_pull_requests repos
+  def self.print_pull_requests repos, options
     @current = new()
-    options = { :state     => 'open',
-                :labels    => 'Needs QA',
-                :sort      => 'updated',
-                :direction => 'asc'
-    }
     $pulls = []
     repos.each do |r|
       $pulls +=  Octokit.issues(r, options )
