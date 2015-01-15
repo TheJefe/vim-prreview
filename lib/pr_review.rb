@@ -32,7 +32,8 @@ class PrReview
       date  = pull.updated_at.strftime(format='%F %T')
       repo  = pull.html_url.split('/')[4]
       title = pull.title.strip
-     b.append(0, "#{date}: #{repo}: #{title}")
+      assignee = pull.assignee ? pull.assignee.login : "unassigned"
+     b.append(0, "#{date}: #{repo}: #{title} ~ #{assignee}")
     end
   end
 
