@@ -56,7 +56,7 @@ class PrReview
     branch = pull.head.ref
     repo  = pull.html_url.split('/')[4]
     if in_repo_dir? repo
-      `#{Vim.evaluate("g:pr_review_merge_command")} #{branch}`
+      Vim.command "execute '! '. g:pr_review_merge_command \'#{branch}\'"
     else
       puts "To merge this PR you need to be in a directory for #{repo}"
     end
