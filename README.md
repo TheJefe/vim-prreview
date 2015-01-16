@@ -8,7 +8,7 @@ set the repositories that you would like to see pull requests listed for by putt
 
     let g:pr_review_github_repos = ['jkoenig311/vim-prreview','rails/rails']
 
-set up custom pull request filters
+set up custom pull request filters. For options see https://developer.github.com/v3/issues/
 
     let g:pr_review_filter= {'state': 'open', 'labels': 'Needs QA', 'sort': 'updated', 'direction': 'asc'}
 
