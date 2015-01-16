@@ -44,7 +44,8 @@ class PrReview
     #branch_name = pull.head.ref
   end
 
-  def browse line_number
+  def browse
+    line_number = Vim.evaluate("line('.')-1")
     url = $pulls[line_number].html_url
     Vim.command "call netrw#NetrwBrowseX(\"#{url}\",0)"
   end
