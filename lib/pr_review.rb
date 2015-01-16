@@ -49,4 +49,27 @@ class PrReview
     url = $pulls[line_number].html_url
     Vim.command "call netrw#NetrwBrowseX(\"#{url}\",0)"
   end
+
+  def merge
+    line_number = Vim.evaluate("line('.')-1")
+    pull = get_pull_from_issue $pulls[line_number]
+    branch = pull.head.ref
+    repo  = pull.html_url.split('/')[4]
+    if in_repo_dir? repo
+      `#{Vim.evaluate("g:pr_review_merge_command")} #{branch}`
+    else
+      puts "To merge this PR you need to be in a directory for #{repo}"
+    end
+  end
+
+  def in_repo_dir? repo
+    remotes = `git remote -v`
+    remotes.include? repo
+  end
+
+  def get_pull_from_issue issue
+    repo  = issue.html_url.split('/')[3] + '/' + issue.html_url.split('/')[4]
+    number = issue.number
+    Octokit.pull repo, number
+  end
 end

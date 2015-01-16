@@ -12,6 +12,9 @@ set up custom pull request filters. For options see https://developer.github.com
 
     let g:pr_review_filter= {'state': 'open', 'labels': 'Needs QA', 'sort': 'updated', 'direction': 'asc'}
 
+Add a custom mere commmand, defaults to `git pull --no-ff --no-edit`
+
+    let g:pr_review_merge_command = 'git stash; git checkout rc; git reset --hard origin/rc; git pull; git pull --no-ff --no-edit origin'
 
 For now, the github authentication credentials are coming from environment variables. You'll want to both of these set.
 
@@ -24,6 +27,7 @@ in the PR list window I have
 
 - `o` mapped to open a PR in a browser
 - `q` to `:q` the split window
+- `m` to merge the selected PR
 
 ## Demo
 ![vim-prreview](https://cloud.githubusercontent.com/assets/2390653/5782762/cf46ba20-9d8b-11e4-9cbd-0d4462249d60.gif)

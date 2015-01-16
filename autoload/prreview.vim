@@ -12,8 +12,16 @@ fun! prreview#ReviewPRs()
   nnoremap <buffer> <silent> o :call prreview#OpenInBrowser()<CR>
   nnoremap <buffer> <silent> q :q<CR>
   nnoremap <buffer> <silent> gx :call prreview#OpenInBrowser()<CR>
+  nnoremap <buffer> <silent> m :call prreview#MergePr()<CR>
 endfun
 
 fun! prreview#OpenInBrowser()
   ruby PrReview.current.browse
+endfun
+
+fun! prreview#MergePr()
+  if !exists("g:pr_review_merge_command")
+    let g:pr_review_merge_command = "git pull --no-ff --no-edit"
+  endif
+  ruby PrReview.current.merge
 endfun
