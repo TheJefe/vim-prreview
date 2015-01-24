@@ -31,3 +31,11 @@ in the PR list window I have
 
 ## Demo
 ![vim-prreview](https://cloud.githubusercontent.com/assets/2390653/5782762/cf46ba20-9d8b-11e4-9cbd-0d4462249d60.gif)
+
+## Run tests
+
+    rake test
+
+or just
+
+   rake
