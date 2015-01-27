@@ -2,6 +2,10 @@
 
 This plugin allows you to review a list of github pull requests across the repositories and labels that you are interested in.
 
+This plugin uses the Octokit gem, so you'll need to make sure you have that installed
+
+    gem install octokit
+
 ## Configuration
 
 set the repositories that you would like to see pull requests listed for by putting this in your `vimrc` file
