@@ -23,6 +23,7 @@ class PrReview
     repos.each do |r|
       $pulls +=  Octokit.issues(r, options )
     end
+    $pulls = $pulls.sort_by { |k| k["updated_at"] }
     @current.print $pulls
   end
 
