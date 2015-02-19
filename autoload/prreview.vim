@@ -12,6 +12,7 @@ fun! prreview#ReviewPRs()
   nnoremap <buffer> <silent> o :call prreview#OpenInBrowser()<CR>
   nnoremap <buffer> <silent> q :q<CR>
   nnoremap <buffer> <silent> gx :call prreview#OpenInBrowser()<CR>
+  nnoremap <buffer> <silent> <CR> :ruby PrReview.current.pull_request<CR>
   nnoremap  m :call prreview#MergePr()<CR>
 endfun
 

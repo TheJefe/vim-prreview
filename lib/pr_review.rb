@@ -51,6 +51,13 @@ class PrReview
     Vim.command "call netrw#NetrwBrowseX(\"#{url}\",0)"
   end
 
+  def pull_request
+    line_number = Vim.evaluate("line('.')-1")
+    pull = get_pull_from_issue $pulls[line_number]
+    repo_url  =pull.html_url.split('/')[3] + "/" + pull.html_url.split('/')[4]
+    Vim.command "Gishow #{pull.number} #{repo_url}"
+  end
+
   def merge
     line_number = Vim.evaluate("line('.')-1")
     pull = get_pull_from_issue $pulls[line_number]
