@@ -55,6 +55,10 @@ class PrReview
     line_number = Vim.evaluate("line('.')-1")
     pull = get_pull_from_issue $pulls[line_number]
     repo_url  =pull.html_url.split('/')[3] + "/" + pull.html_url.split('/')[4]
+
+    Vim.command("silent new")
+    Vim.command("normal ggdG")
+    b = VIM::Buffer.current
     Vim.command "Gishow #{pull.number} #{repo_url}"
   end
 
