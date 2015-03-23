@@ -17,11 +17,12 @@ class PrReview
     end
   end
 
-  def self.print_pull_requests repos, options
+  def self.print_pull_requests repos, query, options
     @current = new()
     $pulls = []
     repos.each do |r|
-      $pulls +=  Octokit.issues(r, options )
+      q = "#{query} repo:#{r}"
+      $pulls +=  Octokit.search_issues(q, options).items
     end
     $pulls = $pulls.sort_by { |k| k["updated_at"] }
     @current.print $pulls

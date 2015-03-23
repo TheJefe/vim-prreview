@@ -6,7 +6,7 @@ fun! prreview#ReviewPRs()
   silent execute 'botright new __PR_list'
   setlocal buftype=nofile
   setlocal bufhidden=delete
-  ruby PrReview.print_pull_requests Vim.evaluate('g:pr_review_github_repos'), Vim.evaluate('g:pr_review_filter')
+  ruby PrReview.print_pull_requests Vim.evaluate('g:pr_review_github_repos'), Vim.evaluate('g:pr_review_query'), Vim.evaluate('g:pr_review_options')
   "remove an extra line at the bottom and move the cursor to the top
   execute 'normal! Gddgg'
   nnoremap <buffer> <silent> o :call prreview#OpenInBrowser()<CR>

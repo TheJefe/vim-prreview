@@ -10,11 +10,12 @@ This plugin uses the Octokit gem, so you'll need to make sure you have that inst
 
 set the repositories that you would like to see pull requests listed for by putting this in your `vimrc` file
 
-    let g:pr_review_github_repos = ['jkoenig311/vim-prreview','rails/rails']
+    let g:pr_review_github_repos = ['thejefe/vim-prreview','rails/rails']
 
-set up custom pull request filters. For options see https://developer.github.com/v3/issues/
+set up custom pull request filters. For options see https://developer.github.com/v3/search/#search-issues
 
-    let g:pr_review_filter= {'state': 'open', 'labels': 'Needs QA', 'sort': 'updated', 'direction': 'asc'}
+    let g:pr_review_query = "state:open type:pr label:\"Needs QA\""
+    let g:pr_review_options = {'sort': 'updated', 'order': 'asc'}
 
 Add a custom mere commmand, defaults to `git pull --no-ff --no-edit`
 
@@ -23,7 +24,7 @@ Add a custom mere commmand, defaults to `git pull --no-ff --no-edit`
 For now, the github authentication credentials are coming from environment variables. You'll want to both of these set.
 
     export GITHUB_TOKEN=123
-    export GITHUB_USERNAME=jkoenig311
+    export GITHUB_USERNAME=thejefe
 
 ## Mappings
 
