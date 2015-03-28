@@ -26,6 +26,10 @@ For now, the github authentication credentials are coming from environment varia
     export GITHUB_TOKEN=123
     export GITHUB_USERNAME=thejefe
 
+## Further enhancement!
+
+To get the best experience, you should also install the [the-jefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim) plugin. Until my changes are merged into the original at [jaxbot/github-issues.vim](https://github.com/jaxbot/github-issues.vim), then you should be directed there.
+
 ## Mappings
 
 in the PR list window I have
@@ -33,9 +37,24 @@ in the PR list window I have
 - `o` mapped to open a PR in a browser
 - `q` to `:q` the split window
 - `m` to merge the selected PR
+- `<return>` to open the PR in a new tab
+
+#### From a PR view
+
+- `<return>` to open commit list of file change in a new tab
+- `s` to open commit list of file change in a vertical split
+- `q` to `:q` the window
 
 ## Demo
 ![vim-prreview](https://cloud.githubusercontent.com/assets/2390653/5782762/cf46ba20-9d8b-11e4-9cbd-0d4462249d60.gif)
+
+### Commits using [the-jefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim)
+
+![commits](https://cloud.githubusercontent.com/assets/2390653/6881865/eef16b16-d546-11e4-8e4a-d0554f83b30e.gif)
+
+### File Diff using [the-jefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim)
+
+![file_diff](https://cloud.githubusercontent.com/assets/2390653/6881891/d038ff80-d547-11e4-8027-0202756c2448.gif)
 
 ## Run tests
 
