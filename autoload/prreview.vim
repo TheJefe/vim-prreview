@@ -20,6 +20,14 @@ fun! prreview#OpenInBrowser()
   ruby PrReview.current.browse
 endfun
 
+fun! prreview#BrowserCmd(url)
+  if has("patch-7.4.567")
+    call netrw#BrowseX(a:url,0)
+  else
+    call netrw#NetrwBrowseX(a:url,0)
+  endif
+endfun
+
 fun! prreview#MergePr()
   if !exists("g:pr_review_merge_command")
     let g:pr_review_merge_command = "git pull --no-ff --no-edit"
