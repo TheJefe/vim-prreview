@@ -26,6 +26,12 @@ class PrReview
     end
     $pulls = $pulls.sort_by { |k| k["updated_at"] }
     @current.print $pulls
+    @current.highlight_my_username
+  end
+
+  def highlight_my_username
+    Vim.command "syn match my_username \"#{GITHUB_USERNAME}\""
+    Vim.command "hi my_username ctermbg=172 ctermfg=white"
   end
 
   def print pulls
