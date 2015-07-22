@@ -28,7 +28,7 @@ For now, the github authentication credentials are coming from environment varia
 
 ## Further enhancement!
 
-To get the best experience, you should also install the [the-jefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim) plugin. Until my changes are merged into the original at [jaxbot/github-issues.vim](https://github.com/jaxbot/github-issues.vim), then you should be directed there.
+To get the best experience, you should also install the [TheJefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim) plugin. Until my changes are merged into the original at [jaxbot/github-issues.vim](https://github.com/jaxbot/github-issues.vim), then you should be directed there.
 
 ## Mappings
 
@@ -48,11 +48,11 @@ in the PR list window I have
 ## Demo
 ![vim-prreview](https://cloud.githubusercontent.com/assets/2390653/5782762/cf46ba20-9d8b-11e4-9cbd-0d4462249d60.gif)
 
-### Commits using [the-jefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim)
+### Commits using [TheJefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim)
 
 ![commits](https://cloud.githubusercontent.com/assets/2390653/6881865/eef16b16-d546-11e4-8e4a-d0554f83b30e.gif)
 
-### File Diff using [the-jefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim)
+### File Diff using [TheJefe/github-issues.vim](https://github.com/TheJefe/github-issues.vim)
 
 ![file_diff](https://cloud.githubusercontent.com/assets/2390653/6881891/d038ff80-d547-11e4-8027-0202756c2448.gif)
 
